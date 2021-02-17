@@ -1,0 +1,14 @@
+.reservation-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+    width: 90vw;
+}
+.reserve-button {
+    background-color: teal;
+    border-width: 0;
+    color: white;
+    padding: 2px;
+    width: 18%;
+}

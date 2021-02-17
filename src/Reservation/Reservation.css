@@ -1,0 +1,25 @@
+.cancel-button {
+    background-color: teal;
+    border-width: 0;
+    color: white;
+    padding: 2px;
+    width: 100%;
+
+}
+
+p {
+    font-size: .8em;
+}
+.res-card {
+    background-color: white;
+    color: teal;
+    padding: 10px;
+    padding-top: 5px;
+    border: solid 3px teal;
+    border-radius: 6px;
+    width: 90%;
+}
+
+.res-name {
+    font-size: 1em;
+}
