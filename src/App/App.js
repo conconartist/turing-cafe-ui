@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Form from '../Form/Form';
 import Reservations from '../Reservations/Reservations';
 import './App.css';
 
@@ -11,6 +12,7 @@ class App extends Component {
       error: false
     }
   }
+
   componentDidMount = () => {
     this.setState({isFetching: true})
     fetch('http://localhost:3001/api/v1/reservations')
@@ -21,12 +23,17 @@ class App extends Component {
       this.setState({error: true, isFetching: false})
     })
   }
+
+  addRes = (newRes) => {
+    this.setState({reservations: [...this.state.reservations, newRes]})
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-      
+          <Form addRes={this.addRes} />
         </div>
         <div className='resy-container'>
           {this.state.isFetching && <h2>Gathering reservations...</h2>}
