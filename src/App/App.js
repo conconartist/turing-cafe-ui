@@ -6,8 +6,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      reservations: []
+      reservations: [],
+      isFetching: false,
+      error: false
     }
+  }
+  componentDidMount = () => {
+    this.setState({isFetching: true})
+    fetch('http://localhost:3001/api/v1/reservations')
+    .then(response => response.json())
+    .then(data => {
+      this.setState({reservations: data, isFetching: false})
+    }).catch(error => {
+      this.setState({error: true, isFetching: false})
+    })
   }
   render() {
     return (
@@ -17,6 +29,7 @@ class App extends Component {
       
         </div>
         <div className='resy-container'>
+          {this.state.isFetching && <h2>Gathering reservations...</h2>}
           <Reservations reservations={this.state.reservations}/>
         </div>
       </div>
