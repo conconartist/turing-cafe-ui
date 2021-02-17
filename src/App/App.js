@@ -37,6 +37,7 @@ class App extends Component {
         </div>
         <div className='resy-container'>
           {this.state.isFetching && <h2>Gathering reservations...</h2>}
+          {this.state.error && <h2>Uh oh...we can't seem to find our reservations. Check back later.</h2>}
           <Reservations reservations={this.state.reservations}/>
         </div>
       </div>
