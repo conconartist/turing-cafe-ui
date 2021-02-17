@@ -1,4 +1,6 @@
 @import './App/App.css';
+@import './Reservations/Reservations.css';
+@import './Reservation/Reservation.css';
 
 body {
   margin: 0;
