@@ -36,28 +36,28 @@ class Form extends Component {
     render() {
         return (
             <form className="reservation-form">
-                <input
+                <input className='name-input'
                     type='text'
                     placeholder='Name'
                     name='name'
                     value={this.state.name}
                     onChange={event => this.handleChange(event)}
                 />
-                <input 
+                <input className='date-input'
                     type='text'
                     placeholder='Date (mm/dd)'
                     name='date'
                     value={this.state.date}
                     onChange={event => this.handleChange(event)}
                 />
-                <input
+                <input className='time-input'
                     type='text'
                     placeholder='Time'
                     name='time'
                     value={this.state.time}
                     onChange={event => this.handleChange(event)}
                 />
-                <input
+                <input className='number-input'
                     type='text'
                     placeholder='Number of guests'
                     name='number'
